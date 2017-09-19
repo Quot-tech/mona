@@ -1,0 +1,543 @@
+@import "compass/css3"
+
+@mixin section($name, $bg_color:black)
+  text-align: center
+  overflow: hidden
+  height: 820px
+  width: 100%
+  background: $bg_color url(/images/#{$name}_bg.jpg) center no-repeat
+  background-size: auto 100%
+  @media screen and (max-width: 960px)
+    height: auto
+
+
+@mixin gallery-block
+  display: inline-block
+  background-size: 100% auto
+  max-width: 600px
+  height: 210px
+  @media (max-width: 767px)
+    // margin-left: 0px 
+    margin-left: auto
+    margin-right: auto
+    height: 240px
+
+body
+  line-height: 1.5
+  font-family: "微軟正黑體", "Microsoft JhengHei", arial
+
+.hide
+  display: none
+
+.clear-float
+  clear: both
+
+.container
+  margin: 0 auto
+  padding-right: 40px
+  padding-left: 40px
+  @media screen and (min-width: 1200px)
+    width: 1120px
+
+.btn
+  padding: 8px
+  margin-right: 12px
+  color: white
+  background-color: #aaa
+  &:hover
+    background-color: rgb(150, 9, 9)
+
+h2
+  font-size: 3em
+  margin: 0.5em 0
+
+h3
+  font-size: 2.2em
+  margin: 0.5em 0
+
+h4
+  font-size: 1.6em
+  margin: 0.5em 0
+
+a
+  text-decoration: none
+  color: black
+
+hr
+  margin: 10px 10px
+  border: 1px #aaa solid
+
+li
+  margin-left: 1em
+  margin-bottom: 0.5em
+  text-indent: -1em
+
+// body
+//  background-color: black
+.nav-bar
+  // height: 40px
+  position: fixed
+  text-align: center
+  top: 0px
+  left: 0px
+  width: 100%
+  z-index: 500
+  ul
+    width: 640px
+    height: 32px
+    margin: 0px auto
+    padding: 8px 0px
+    background-color: #ddd
+    @include box-shadow(0 0 12px)
+    @include border-radius(0 0 16px 16px)
+  li
+    display: inline
+    margin: 0px 10px
+    font-size: 14px
+  .home
+    padding: 0 35px
+    text-align: center
+    position: relative
+    img
+      width: 56px
+      position: absolute
+      left: 7px
+      bottom: -45px
+  
+
+.virgin
+  position: relative
+  overflow: hidden
+  width: 100%
+  height: 720px
+  background: black
+  .rock-left
+    // background: url(/images/rock_left.png)
+    // background-position: left top
+    // background-size: auto 100%
+    position: absolute
+    left: 0px
+    top: 0px
+    // width: 200px
+    // float: left
+    z-index: 75
+  .rock-right
+    // background: url(/images/rock_left.png)
+    // background-position: left top
+    // background-size: auto 100%
+    position: absolute
+    right: 0px
+    top: 0px
+    // width: 200px
+    // float: left
+    z-index: 75
+  .container
+    position: relative
+    margin: 0px auto
+    height: 100%
+    width: 1200px
+    padding: 0px
+    background: black url(/images/virgin_bg.jpg) right no-repeat
+    .title
+      position: absolute
+      left: 20px
+      top: 30px
+      width: 520px
+      z-index: 102
+    .virgin-1
+      position: absolute
+      right: 0px
+      top: 0px
+      z-index: 100
+    .virgin-2
+      position: absolute
+      right: 0px
+      top: 0px
+      z-index: 101
+    .icons
+      background: url(/images/icons.png) center no-repeat
+      background-size: 100% 100%
+      position: absolute
+      width: (996/4)+px
+      height: (344/4)+px
+      left: 50px
+      top: 520px
+      z-index: 103
+    .link
+      margin: 24px 0px 0px 40px
+      a
+        display: block
+        width: 100%
+        height: 100%
+      td
+        padding: 0px
+        height: 40px
+        background: none
+      .youtube
+        width: 32px
+      .facebook
+        padding-left: 16px
+        width: 24px
+      .mediasphere
+        padding-left: 16px
+        width: 38px
+      .contactus
+        padding-left: 16px
+        width: 38px
+    @media screen and (min-width: 1599px)
+      width: 1440px
+      .title
+        width: 720px
+    @media (max-width: 767px)
+      width: 100%
+
+  .sponsor
+    position: absolute
+    z-index: 150
+    bottom: 0px
+    padding: 0px
+    width: 100%
+    height: 100px
+    background: url(/images/sponsor_bg.png) center
+    text-align: center
+    .logos
+      // margin-bottom: 10px
+      margin-top: 40px
+    span
+      display: inline-block
+      font-size: 18px
+      line-height: 48px
+      margin-right: 8px
+    a
+      height: 42px
+      margin-right: 16px
+    img
+      height: 50px
+      margin-bottom: 0px
+      vertical-align: bottom
+
+.host
+  @include section(host)
+  // background-size: 100% auto
+  // background-position: center bottom
+  background-repeat: repeat-x
+  color: white
+  display: table
+  hr
+    border-color: white
+    margin: 10px 100px
+  p
+    font-size: 80%
+  .thumbnail
+    width: 54px
+    margin-left: 12px
+    @include box-shadow(2px 2px 6px black)
+  // .container
+  //   max-width: 720px
+  .title
+    h3
+      margin-bottom: 0
+      font-size: 1.8em
+    h4
+      font-size: 0.9em
+  .hoster
+    margin-left: 0px
+    padding-left: 32px
+    text-align: left
+    border-left: 1px solid white
+    hr
+      margin-left: 100px
+      margin-right: 0px
+    .hoster-photo
+      background: url(/images/hoster.jpg) top center
+      // background-size: -100% auto
+      float: right
+      width: 240px
+      height: 80px
+    .title
+      font-size: 1.5em
+    @media (max-width: 767px)
+      text-align: left
+  .museum
+    padding-right: 32px
+    padding-left: 20%
+    text-align: left
+    hr
+      margin-left: 0px
+      margin-right: 48px
+    a
+      color: #ddd
+    .title
+      font-size: 1.5em
+  .picture
+    margin-left: -32px
+    width: 100%
+
+.items
+  @include section(items, #d0d1d3)
+  display: table
+  .container
+    text-align: center
+  .title
+    display: inline-block
+    background-color: #666
+    color: white
+    text-align: left
+    // text-align: center
+    font-size: xx-large
+    line-height: 1
+    height: 100%
+    position: absolute
+    top: 0px
+    padding: 0px 20px
+    h3
+      margin-top: 20px
+  .intro
+    text-align: left
+    padding-left: 30px
+  .gallery
+    // width: 920px
+    height: 422px
+    max-width: 100%
+    // img
+    //   height: 200px
+    //   margin-right: 18px
+    //   @include box-shadow(2px 2px 6px black)
+    .row-fluid
+      height: 210px
+      position: relative
+    @media (max-width: 767px)
+      height: auto
+      .row-fluid
+        height: auto
+  @media (max-width: 767px)
+    .row-fluid [class*="span"]:first-child
+      margin-left: auto
+      margin-right: auto
+  .span5, .span7
+    margin-left: 2px 
+    // margin-bottom: 2px
+  .span5
+    text-align: right
+    a
+      display: block
+      width: 100%
+      height: 100%
+  .span7
+    text-align: left
+    .row-fluid
+      margin-bottom: 2px
+    img
+      margin-right: 2px 
+  .gallery-virgin
+    @include gallery-block
+    background: url(/images/gallery/virgin.jpg) right no-repeat
+    background-size: auto 100%
+    height: 422px
+  .gallery-gioconda
+    background: black url(/images/gallery/gioconda.jpg) top
+    @include gallery-block
+  .gallery-keys
+    background: black url(/images/gallery/keys.jpg) top
+    @include gallery-block
+  .gallery-lhooq
+    background: black url(/images/gallery/lhooq.jpg) top
+    @include gallery-block
+  .gallery-butterfly
+    background: black url(/images/gallery/butterfly.jpg) top
+    @include gallery-block
+
+.davinci
+  @include section(davinci)
+  background-size: 100% 100%
+  small
+    font-size: 60%
+  p
+    font-size: 80%
+  .head
+    height: 820px
+    text-align: center
+    img
+      height: 640px
+  .text
+    // padding: 10px
+    text-align: left
+    display: table
+    height: 820px
+    @media (max-width: 767px)
+      height: auto
+  .btn
+    background-color: rgb(156, 87, 24)
+    &:hover
+      background-color: rgb(150, 9, 9)
+  .area
+    strong
+      font-weight: bolder
+      font-size: 1.25em
+
+.monalisa
+  @include section(monalisa)
+  background: white
+
+.info
+  @include section(info)
+  display: table
+  background: rgb(150, 9, 9)
+  height: 240px
+  .text
+    color: white
+
+.ticket
+  background: url(/images/ticket_bg.png) no-repeat
+  // background-size: auto 100%
+  background-position: left bottom
+  text-align: left
+  padding: 32px 0px
+  a
+    color: rgb(0, 127, 199)
+  table
+    // margin-right: 0px
+    // margin-left: auto
+  .white-mask
+    padding: 20px
+    background-color: rgba(255,255,255,0.6)
+  .retailer
+    height: 2em
+    vertical-align: middle
+  .notice
+    margin: 12px 0px
+  .btn
+    color: white
+    line-height: 2.5em
+
+table
+  margin-top: 24px
+  margin-bottom: 10px
+th,td
+  text-align: left
+  padding: 10px 20px
+  background: #fff
+.gray td
+  background: #eee
+th
+  background: black
+  color: white
+
+
+.transport
+  background: #efefef
+  padding: 40px 0px 
+  li
+    margin: 10px 1em
+    text-indent: 0
+  hr
+    // border-color: black
+    margin-right: 30%
+    margin-left: 0%
+    margin-top: 64px
+    // margin-bottom: 32px
+  header
+    // color: #fff
+    text-align: center
+  .bus, .car
+    margin-bottom: 32px
+  .map
+    @include box-shadow(8px 8px 12px rgba(0,0,0,0.6))
+    width: 100%
+    height: 240px
+    // padding: 20px
+  .tabs
+    padding: 0px 60px
+    .tab
+      display: inline-block
+      width: 110px
+      height: 40px
+      padding: 24px 32px 0px 14px
+      text-align: center
+      // font-size: x-large
+      background: url(/images/transport_tab.png) center
+      background-size: 100% 100%
+      line-height: 100%
+      font-size: 18px
+      a
+        color: white
+      &.active
+        background: url(/images/transport_tab_active.png) center
+        background-size: 100% 100%
+        a
+          color: black
+  .canvas
+    width: 80%
+    height: 640px
+    padding: 60px 10% 0px
+    background: url(/images/transport_container.png) center
+    background-size: 100% 100%
+
+// .sponsor
+//   text-align: center
+//   padding: 40px 0px
+//   span
+//     display: inline-block
+//     font-size: 18px
+//     line-height: 48px
+//     margin-right: 8px
+//   a
+//     height: 42px
+//     margin-right: 16px
+//   img
+//     height: 42px
+//     margin-bottom: 0px
+//     vertical-align: bottom
+
+.valign
+  display: table-cell
+  vertical-align: middle
+
+.qa
+  li
+    display: block
+    padding: 15px 0px
+    text-indent: 0
+  .num
+    text-align: center
+    padding: 0px 20px
+    width: 48px
+    line-height: 64px
+    font-size: 48px
+    float: left
+  .q
+    margin-bottom: 10px
+  .a
+    color: gray
+    font-size: small
+    margin-left: 88px
+
+.ticket-batch
+  width: 480px
+  table
+    width: 100%
+  a
+    color: rgb(0, 127, 199)
+  .download-form
+    float: right
+.ticket-detail
+  .notice
+    text-indent: -1.5em
+    margin-left: 1.5em
+    margin-bottom: 0.2em
+  .phone-number
+    font-size: small
+    margin-top: 0px
+    padding-left: 1em
+    li
+      text-indent: 0px
+      margin-bottom: 0px
+      display: block
+.monalisa-events
+  width: 1147px
+.guide-info
+  h4
+    margin-bottom: 0px
+  p
+    margin-top: 0.2em
+    margin-bottom: 0.2em
